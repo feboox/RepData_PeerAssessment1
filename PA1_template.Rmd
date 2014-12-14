@@ -34,9 +34,15 @@ stepsPerDay <- aggregate(pdata$steps, by=list(date=pdata$date), FUN=sum)
 hist(stepsPerDay$x, xlab="Steps", main="")
 ```
 
-The mean number of steps taken per day is around `r format(mean(stepsPerDay$x, na.rm=T), nsmall=2)`.
+We calculate the mean and the median 
+```{r, results='hide' }
+mean1 <- format(mean(stepsPerDay$x, na.rm=T), nsmall=2)
+median1 <- format(median(stepsPerDay$x, na.rm=T), nsmall=2)
+```
 
-The median is `r median(stepsPerDay$x, na.rm=T)`.
+The mean number of steps taken per day is around `r mean1`.
+
+The median is `r median1`.
 
 
 ## What is the average daily activity pattern?
@@ -63,9 +69,15 @@ allStepsPerDay <- aggregate(data$allSteps, by=list(date=data$date), FUN=sum)
 hist(allStepsPerDay$x, xlab="Steps", main="")
 ```
 
-The mean number of steps taken per day is around `r format(mean(allStepsPerDay$x, na.rm=T), nsmall=2)`.
+We calculate the mean and the median 
+```{r, results='hide' }
+mean2 <- format(mean(allStepsPerDay$x, na.rm=T), nsmall=2)
+median2 <- format(median(allStepsPerDay$x, na.rm=T), nsmall=2)
+```
 
-The median is `r format(median(allStepsPerDay$x, na.rm=T), nsmall=2)`.
+The mean number of steps taken per day is around `r mean2`.
+
+The median is `r median2`.
 
 Replacing the missing values with the mean of the equivalent interval does not alter the mean and the median of steps taken per day.
 
