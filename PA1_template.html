@@ -86,6 +86,7 @@ plot(stepsPerInterval$interval, stepsPerInterval$x, type=&quot;l&quot;, xlab=&qu
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
+<pre class="r"><code>isnas &lt;- sum(is.na(data$steps))</code></pre>
 <p>There are 2304 missing values (where the steps values is NA).</p>
 <p>We can replace every NA value with the equivalent interval average.</p>
 <pre class="r"><code>data$allSteps &lt;- ifelse(is.na(data$steps), stepsPerInterval[match(data$interval, stepsPerInterval$interval), 'x'], data$steps) </code></pre>

@@ -56,7 +56,11 @@ On average the interval with the maximum number of steps is the number `r stepsP
 
 ## Imputing missing values
 
-There are `r sum(is.na(data$steps))` missing values (where the steps values is NA).
+```{r}
+isnas <- sum(is.na(data$steps))
+```
+
+There are `r isnas` missing values (where the steps values is NA).
 
 We can replace every NA value with the equivalent interval average.
 ```{r}
